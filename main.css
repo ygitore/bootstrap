@@ -1,3 +1,9 @@
 body{
     background-color:skyblue;
 }
+.card-img-top{
+    max-height: 250px;
+}
+.card{
+    margin:3em 0;
+}

@@ -47,17 +47,32 @@ const pies = [
         //domString += `<p><i>${currentPie.name}</i></p>`
         domString += 
             `<div class="col col-3">
-            <div class="card">
-                <img src="${currentPie.imageUrl}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><p><i>${currentPie.name}</i></p></h5>
-                    <p class="card-text">${currentPie.instructor},${currentPie.iceCream}</p>
+                <div class="card">
+                    <img src="${currentPie.imageUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><p><i>${currentPie.name}</i></p></h5>
+                        <p class="card-text">${currentPie.instructor},${currentPie.iceCream}</p>
+                    </div>
                 </div>
-            </div>
             </div>`
     }
     domString += '</div>';
     //print to dom
     printToDom('pie-zone', domString);
   }
+  const buttonClickEvent = (e)=>{
+    const instructorName = e.target.id;
+    //should print pies based on button that you click
+    const selectPies = [];
+    for (let i = 0; i < pies.length; i++) {
+        const p = pies[i];
+        if(instructorName === p.instructor){
+            selectPies.push(p);
+        }        
+    }
+    cardBuilder(selectPies);
+  }
+  document.getElementById('zoe').addEventListener('click', buttonClickEvent);
+  document.getElementById('callan').addEventListener('click', buttonClickEvent);
+  document.getElementById('michael').addEventListener('click', buttonClickEvent);
   cardBuilder(pies);

@@ -48,7 +48,7 @@ const pies = [
         domString += 
             `<div class="col col-3">
                 <div class="card">
-                    <img src="${currentPie.imageUrl}" class="card-img-top" alt="...">
+                    <img src="${currentPie.imageUrl}" class="card-img-top" alt="${currentPie.iceCream}">
                     <div class="card-body">
                         <h5 class="card-title"><p><i>${currentPie.name}</i></p></h5>
                         <p class="card-text">${currentPie.instructor},${currentPie.iceCream}</p>
